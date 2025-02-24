@@ -2,21 +2,12 @@ import React, { useEffect, useState } from "react";
 import { collection, query, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
 
   const isTaskValid = (deadline) => {
     if (!deadline || typeof deadline.toDate !== "function") {
@@ -107,7 +98,7 @@ const TaskList = () => {
       <div className="task-header">
         <h2>Daftar Tugas</h2>
         <div className="button-group">
-          {user ? (
+          {auth.currentUser ? (
             <>
               <button className="back-btn" onClick={() => navigate("/")}>
                 Kembali
