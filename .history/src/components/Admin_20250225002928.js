@@ -98,32 +98,19 @@ const Admin = () => {
           />
         </div>
 
-        <div className="button-container">
+        <div className="button-group">
           <button type="submit" className="submit-btn">
             Tambah Tugas
           </button>
           <button
             type="button"
             className="back-btn"
-            onClick={() => navigate("/tasks")}
+            onClick={() => navigate("/")}
           >
             Kembali
           </button>
         </div>
       </form>
-      <style jsx>{`
-        .button-container {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          margin-top: 20px;
-        }
-        .submit-btn,
-        .back-btn {
-          padding: 10px 20px;
-          min-width: 120px;
-        }
-      `}</style>
     </div>
   );
 };

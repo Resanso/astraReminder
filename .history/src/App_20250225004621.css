@@ -80,9 +80,8 @@ body {
 
 /* Header Styles */
 header {
-  background-color: rgba(30, 41, 59, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(8px);
   padding: 1.25rem 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -91,7 +90,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 header h1 {
@@ -109,16 +107,16 @@ header h1 {
   margin: 3rem auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 .task-card {
   background: var(--glass-background);
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
-  border-radius: 1.25rem;
-  padding: 1.5rem;
+  border-radius: 1.5rem;
+  padding: 2rem;
   transition: var(--transition-base);
   box-shadow: var(--card-shadow);
 }
@@ -333,7 +331,7 @@ header h1 {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
-  padding: 2.5rem;
+  padding: 2rem;
   max-width: 500px;
   margin: 2rem auto;
   box-shadow: var(--card-shadow);
@@ -349,7 +347,6 @@ header h1 {
   font-family: inherit;
   font-size: 0.9375rem;
   transition: var(--transition-base);
-  margin-bottom: 1.5rem;
 }
 
 .auth-form input:focus {
@@ -366,8 +363,7 @@ header h1 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 1.5rem;
-  margin-top: 0.5rem;
+  margin-bottom: 15px;
 }
 
 .auth-form button:hover {
@@ -377,23 +373,10 @@ header h1 {
 .auth-form a {
   color: #007bff;
   text-decoration: none;
-  display: block;
-  margin-top: 1rem;
 }
 
 .auth-form a:hover {
   text-decoration: underline;
-}
-
-.auth-form .form-group {
-  margin-bottom: 1.5rem;
-}
-
-.auth-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
 }
 
 .task-creator {
@@ -493,176 +476,4 @@ header h1 {
   to {
     transform: rotate(360deg);
   }
-}
-
-/* Gradient Text Effect */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-primary), #a5b4fc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Glass Card with Hover Effect */
-.glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-}
-
-.glass-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  border-color: rgba(99, 102, 241, 0.3);
-}
-
-/* Animated Border */
-.animated-border {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.animated-border::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(
-    45deg,
-    var(--accent-primary),
-    var(--accent-secondary),
-    #a5b4fc,
-    var(--accent-primary)
-  );
-  border-radius: 16px;
-  z-index: -1;
-  animation: border-animation 4s linear infinite;
-}
-
-@keyframes border-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Shimmer Effect */
-.shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-/* Floating Animation */
-.floating {
-  animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* Pulse Effect */
-.pulse {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
-  }
-}
-
-/* Custom Scrollbar */
-.custom-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-primary) rgba(255, 255, 255, 0.1);
-}
-
-.custom-scroll::-webkit-scrollbar {
-  width: 6px;
-}
-
-.custom-scroll::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-}
-
-.custom-scroll::-webkit-scrollbar-thumb {
-  background: var(--accent-primary);
-  border-radius: 3px;
-}
-
-/* Enhanced Button Styles */
-.neon-button {
-  position: relative;
-  background: transparent;
-  border: 2px solid var(--accent-primary);
-  color: var(--accent-primary);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
-  transition: all 0.3s ease;
-}
-
-.neon-button:hover {
-  background: var(--accent-primary);
-  color: white;
-  box-shadow: 0 0 25px var(--accent-primary);
-}
-
-/* Backdrop Blur Container */
-.blur-container {
-  background: rgba(30, 41, 59, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
 }

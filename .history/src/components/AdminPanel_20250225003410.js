@@ -76,25 +76,13 @@ const AdminPanel = () => {
           value={task.deadline}
           onChange={(e) => setTask({ ...task, deadline: e.target.value })}
         />
-        <div className="button-container">
+        <div className="button-group">
           <button type="submit">Tambah Tugas</button>
           <button type="button" onClick={() => navigate("/")}>
             Kembali ke Beranda
           </button>
         </div>
       </form>
-      <style jsx>{`
-        .button-container {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          margin-top: 20px;
-        }
-        .button-container button {
-          padding: 10px 20px;
-          min-width: 120px;
-        }
-      `}</style>
     </div>
   );
 };
