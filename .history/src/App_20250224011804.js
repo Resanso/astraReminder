@@ -36,7 +36,7 @@ function App() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <Router basename="/">
+    <Router>
       <div className="App">
         <header>
           <h1>Website Kelas</h1>
